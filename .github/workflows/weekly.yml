@@ -16,4 +16,4 @@ jobs:
         run: |
           curl -X POST "$DOORAY_WEBHOOK_URL" \
             -H "Content-Type: application/json" \
-            -d '{"text":"📢 점심 메뉴 11시까지 추천 받습니다."}'
+            -d '{"text":"📢 점심 메뉴 11시까지 선착순으로 4개 추천 받습니다."}'
