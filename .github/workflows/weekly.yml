@@ -1,0 +1,19 @@
+name: Dooray Weekly Message
+
+on:
+  schedule:
+    - cron: '0 1 * * 4'
+  workflow_dispatch:
+
+jobs:
+  send-message:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Send Dooray message
+        env:
+          DOORAY_WEBHOOK_URL: ${{ secrets.DOORAY_WEBHOOK_URL }}
+        run: |
+          curl -X POST "$DOORAY_WEBHOOK_URL" \
+            -H "Content-Type: application/json" \
+            -d '{"text":"📢 점심 메뉴 11시까지 추천 받습니다."}'
