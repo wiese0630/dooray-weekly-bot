@@ -2,7 +2,7 @@ name: Dooray Weekly Message
 
 on:
   schedule:
-    - cron: '0 1 * * 4'
+    - cron: '30 1 * * 4'
   workflow_dispatch:
 
 jobs:
