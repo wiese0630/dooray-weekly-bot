@@ -2,8 +2,8 @@ name: Dooray Daily Message
 
 on:
   schedule:
-    # 매일 17:50 KST = 08:50 UTC
-    - cron: '50 8 * * *'
+    - cron: '50 17 * * *'
+      timezone: 'Asia/Seoul'
 
   workflow_dispatch:
 
