@@ -1,0 +1,23 @@
+name: Dooray Daily Message
+
+on:
+  schedule:
+    # 매일 17:50 KST = 08:50 UTC
+    - cron: '50 8 * * *'
+
+  workflow_dispatch:
+
+jobs:
+  send-message:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Send message to Dooray
+        env:
+          DOORAY_WEBHOOK_URL: ${{ secrets.DOORAY_WEBHOOK_URL }}
+        run: |
+          curl -X POST "$DOORAY_WEBHOOK_URL" \
+            -H "Content-Type: application/json" \
+            -d '{
+              "text": "📢 메시지 테스트입니다."
+            }'
